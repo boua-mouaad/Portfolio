@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+/*
+  Tailwind v4:
+  Make `dark:` respond to the .dark class instead of
+  the user's operating-system preference.
+*/
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  color-scheme: light;
+}
+
+html.dark {
+  color-scheme: dark;
+}
+
+html {
+  background: #fdfdfd;
+  transition: background-color 300ms ease, color 300ms ease;
+}
+
+html.dark {
+  background: #0a0a0a;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: #fdfdfd;
+  color: #111111;
+  transition:
+    background-color 300ms ease,
+    color 300ms ease;
+}
+
+html.dark body {
+  background: #0a0a0a;
+  color: #f5f5f5;
+}
+
+/* Better form controls in dark mode */
+html.dark input,
+html.dark textarea,
+html.dark select {
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  background: #111;
+  color: #fff;
+}
+
+html.dark ::selection {
+  background: #fff;
+  color: #111;
+}
